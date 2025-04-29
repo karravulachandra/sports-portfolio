@@ -1,7 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Sections.css';
 
 const BroadcastSection = () => {
+  // Refs for elements that will be animated
+  const sectionTitleRef = useRef(null);
+  const sectionDescriptionRef = useRef(null);
+  const videoGridRef = useRef(null);
+  const videoItemRefs = useRef([]);
+  const sectionSubtitleRefs = useRef([]);
+  const itemsGridRef = useRef(null);
+  const itemCardRefs = useRef([]);
+  const ctaRef = useRef(null);
+
+  // Set up intersection observer for animations
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all elements that need animations
+    if (sectionTitleRef.current) observer.observe(sectionTitleRef.current);
+    if (sectionDescriptionRef.current) observer.observe(sectionDescriptionRef.current);
+    if (videoGridRef.current) observer.observe(videoGridRef.current);
+    if (itemsGridRef.current) observer.observe(itemsGridRef.current);
+    if (ctaRef.current) observer.observe(ctaRef.current);
+
+    videoItemRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    sectionSubtitleRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    itemCardRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   // Featured YouTube videos with the specific videos provided
   const featuredVideos = [
     {
@@ -100,17 +152,22 @@ const BroadcastSection = () => {
 
   return (
     <section className="section broadcast-section" id="broadcast">
-      <h2 className="section-title">On-Air</h2>
+      <h2 className="section-title" ref={sectionTitleRef} data-text="On-Air">On-Air</h2>
       <div className="section-content">
-        <p className="section-description">
+        <p className="section-description" ref={sectionDescriptionRef}>
           As a sports broadcaster and on-air talent, I bring energy and insight to every segment. My work spans from live game coverage and sideline reporting to in-studio analysis and athlete interviews.
         </p>
 
         {/* Featured Videos Section */}
-        <h3 className="section-subtitle">Demo Reels</h3>
-        <div className="video-grid">
-          {featuredVideos.map(video => (
-            <div key={video.id} className="video-item card">
+        <h3 className="section-subtitle" ref={el => sectionSubtitleRefs.current[0] = el}>Demo Reels</h3>
+        <div className="video-grid" ref={videoGridRef}>
+          {featuredVideos.map((video, index) => (
+            <div
+              key={video.id}
+              className="video-item card"
+              ref={el => videoItemRefs.current[index] = el}
+              style={{ animationDelay: `${0.1 * index}s` }}
+            >
               <div className="video-container">
                 <iframe
                   src={`https://www.youtube.com/embed/${video.embedId}`}
@@ -120,8 +177,8 @@ const BroadcastSection = () => {
                 ></iframe>
               </div>
               <div className="video-content">
-                <h3 className="item-title">{video.title}</h3>
-                <p className="item-description">{video.description}</p>
+                <h3 className="video-title">{video.title}</h3>
+                <p className="video-description">{video.description}</p>
                 <div className="video-meta">
                   <span className="video-views"><i className="fas fa-eye"></i> 12.5K views</span>
                   <span className="video-date"><i className="fas fa-calendar-alt"></i> Apr 2024</span>
@@ -133,10 +190,14 @@ const BroadcastSection = () => {
 
         {/* Broadcast Experience */}
         <div className="broadcast-experience">
-          <h3 className="section-subtitle">On-Air Experience</h3>
+          <h3 className="section-subtitle" ref={el => sectionSubtitleRefs.current[1] = el}>On-Air Experience</h3>
           <div className="experience-timeline">
-            {experienceItems.map(item => (
-              <div key={item.id} className="experience-item">
+            {experienceItems.map((item, index) => (
+              <div
+                key={item.id}
+                className="experience-item"
+                style={{ animationDelay: `${0.1 * index}s` }}
+              >
                 <div className="experience-marker"></div>
                 <div className="experience-content">
                   <div className="experience-header">
@@ -152,10 +213,15 @@ const BroadcastSection = () => {
         </div>
 
         {/* Other Broadcast Work */}
-        <h3 className="section-subtitle">Featured Segments</h3>
-        <div className="items-grid">
-          {broadcastItems.map(item => (
-            <div key={item.id} className="item-card card">
+        <h3 className="section-subtitle" ref={el => sectionSubtitleRefs.current[2] = el}>Featured Segments</h3>
+        <div className="items-grid" ref={itemsGridRef}>
+          {broadcastItems.map((item, index) => (
+            <div
+              key={item.id}
+              className="item-card card"
+              ref={el => itemCardRefs.current[index] = el}
+              style={{ animationDelay: `${0.1 * index}s` }}
+            >
               <div className="item-badge">Featured</div>
               <div
                 className="item-placeholder"
@@ -177,7 +243,9 @@ const BroadcastSection = () => {
                 <p className="item-description">{item.description}</p>
                 <div className="item-meta">
                   <span className="item-date"><i className="fas fa-calendar-alt"></i> Apr 2024</span>
-                  <a href={item.videoUrl} target="_blank" rel="noopener noreferrer" className="item-link">Watch Segment</a>
+                  <a href={item.videoUrl} target="_blank" rel="noopener noreferrer" className="item-link">
+                    Watch Segment <i className="fas fa-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -185,13 +253,17 @@ const BroadcastSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="broadcast-cta">
+        <div className="broadcast-cta" ref={ctaRef}>
           <div className="cta-content">
             <h3>Looking for a sports broadcaster for your next event?</h3>
             <p>I'm available for game coverage, interviews, and sports commentary. Let's create memorable sports content together!</p>
             <div className="cta-buttons">
-              <a href="#contact" className="cta-button primary">Get in Touch</a>
-              <a href="#events" className="cta-button secondary">View Events Coverage</a>
+              <a href="#contact" className="btn primary">
+                Get in Touch <i className="fas fa-envelope"></i>
+              </a>
+              <a href="#events" className="btn btn-outline">
+                View Events <i className="fas fa-arrow-right"></i>
+              </a>
             </div>
           </div>
           <div className="cta-image">

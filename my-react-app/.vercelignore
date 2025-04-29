@@ -1,0 +1,17 @@
+# Ignore original image files (keep only the ones used in the code)
+public/images/graphics/aziyah f copy.png
+public/images/graphics/deck final.png
+public/images/graphics/indy schedule w_ home away.png
+public/images/graphics/indy-v1.png
+public/images/graphics/liberty title social.png
+public/images/graphics/on air graphic.png
+public/images/graphics/ps5 cover.png
+public/images/graphics/sherman shadowcats graphic copy.png
+public/images/graphics/snider landyn.png
+public/images/graphics/trent perry copy.png
+
+# Ignore node_modules
+node_modules
+
+# Ignore build artifacts
+dist

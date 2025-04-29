@@ -28,7 +28,7 @@ const Header = () => {
           <img src="/images/sports/sport1.jpg" alt="Siddartha Manubothu broadcasting from a sports field" />
         </div>
         <div className={`header-text-container ${isVisible ? 'visible' : ''}`}>
-          <h1 className="main-title">
+          <h1 className="main-title" data-text="Sports Portfolio">
             <span className="title-highlight">Sports</span> Portfolio
           </h1>
           <h2 className="subtitle">Siddartha Manubothu</h2>
@@ -39,8 +39,12 @@ const Header = () => {
             <span className="header-badge">Multimedia</span>
           </div>
           <div className="header-cta">
-            <a href="#broadcast" className="cta-button primary">View My Work</a>
-            <a href="#contact" className="cta-button secondary">Contact Me</a>
+            <a href="#broadcast" className="cta-button primary">
+              View My Work <i className="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" className="cta-button secondary">
+              Contact Me <i className="fas fa-envelope"></i>
+            </a>
           </div>
         </div>
       </div>
