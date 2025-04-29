@@ -8,86 +8,142 @@ const GraphicDesignSection = () => {
   const graphicProjects = [
     {
       id: 1,
-      title: 'Championship Series Branding',
-      category: 'Branding',
-      description: 'Complete branding package for a national championship series including logo design, color palette, typography, and brand guidelines.',
-      imageUrl: '/images/sports/sport2.jpg',
+      title: 'Player Highlight - Aziyah',
+      category: 'Player Graphics',
+      description: 'Custom player highlight graphic showcasing Aziyah with dynamic visual elements and professional sports branding.',
+      imageUrl: '/images/graphics/graphic1.png',
       details: {
-        client: 'National Sports League',
+        client: 'College Athletics Department',
         year: '2024',
-        services: ['Logo Design', 'Brand Identity', 'Style Guide', 'Marketing Materials'],
-        challenge: 'Create a dynamic and memorable brand identity for a major sports championship that captures the energy and prestige of the event.',
-        solution: 'Developed a bold, modern visual identity with a distinctive logo that works across all platforms and marketing materials.'
+        services: ['Player Graphics', 'Sports Branding', 'Digital Design', 'Social Media Assets'],
+        challenge: 'Create an eye-catching player highlight graphic that showcases the athlete\'s personality while maintaining team branding guidelines.',
+        solution: 'Developed a bold, dynamic design with custom typography and visual effects that highlights the player while reinforcing team identity.'
       }
     },
     {
       id: 2,
-      title: 'Team Poster Series',
-      category: 'Print Design',
-      description: 'Series of promotional posters for a college basketball team highlighting key players and game schedules.',
-      imageUrl: '/images/sports/sport9.jpg',
+      title: 'Basketball Court Design',
+      category: 'Environmental Design',
+      description: 'Complete court design concept featuring team colors, logo placement, and distinctive visual elements.',
+      imageUrl: '/images/graphics/graphic2.png',
       details: {
-        client: 'University Athletics Department',
-        year: '2023',
-        services: ['Poster Design', 'Photography Direction', 'Typography', 'Print Production'],
-        challenge: 'Create eye-catching posters that would increase game attendance and build team recognition on campus.',
-        solution: 'Designed a cohesive series of posters with dynamic compositions, bold typography, and dramatic lighting to create a sense of excitement and team pride.'
+        client: 'University Athletics Program',
+        year: '2024',
+        services: ['Environmental Design', 'Brand Application', 'Visual Identity', 'Concept Development'],
+        challenge: 'Design a distinctive basketball court that represents the team\'s identity while meeting regulation requirements.',
+        solution: 'Created a bold court design with strategic logo placement and custom sideline graphics that enhances brand visibility during broadcasts.'
       }
     },
     {
       id: 3,
-      title: 'Sports Event Campaign',
-      category: 'Marketing',
-      description: 'Comprehensive marketing campaign for a major sporting event including digital and print materials.',
-      imageUrl: '/images/sports/sport10.jpg',
+      title: 'Indianapolis Schedule Design',
+      category: 'Print & Digital',
+      description: 'Comprehensive game schedule design for Indianapolis team showing home and away games with clear visual hierarchy.',
+      imageUrl: '/images/graphics/graphic3.png',
       details: {
-        client: 'Regional Sports Commission',
-        year: '2023',
-        services: ['Campaign Strategy', 'Visual Identity', 'Advertising Materials', 'Social Media Assets'],
-        challenge: 'Develop a cohesive marketing campaign that would increase ticket sales and generate excitement for a regional sporting event.',
-        solution: 'Created a vibrant, energetic visual system that was applied across all marketing channels, resulting in a 40% increase in attendance from the previous year.'
+        client: 'Indianapolis Sports Team',
+        year: '2024',
+        services: ['Schedule Design', 'Information Design', 'Print Materials', 'Digital Assets'],
+        challenge: 'Present a complex season schedule in a visually appealing format that fans can easily understand and reference.',
+        solution: 'Designed a clean, organized schedule with color-coding for home/away games and visual elements that reinforce team branding.'
       }
     },
     {
       id: 4,
-      title: 'Athlete Brand Identity',
+      title: 'Indianapolis Team Branding',
       category: 'Branding',
-      description: 'Personal brand development for a professional athlete including logo, social media templates, and merchandise design.',
-      imageUrl: '/images/sports/sport4.jpg',
+      description: 'Team branding concept for Indianapolis featuring logo design, typography, and color palette applications.',
+      imageUrl: '/images/graphics/graphic4.png',
       details: {
-        client: 'Professional Basketball Player',
+        client: 'Indianapolis Sports Organization',
         year: '2024',
-        services: ['Personal Branding', 'Logo Design', 'Social Media Kit', 'Merchandise Design'],
-        challenge: 'Create a distinctive personal brand for an athlete that would help build their off-court presence and business opportunities.',
-        solution: 'Developed a sleek, professional brand identity that reflects the athlete\'s playing style and personality, with applications across social media, apparel, and endorsements.'
+        services: ['Logo Design', 'Brand Identity', 'Typography', 'Color Theory'],
+        challenge: 'Create a distinctive visual identity that represents Indianapolis sports culture while standing out in a competitive market.',
+        solution: 'Developed a modern, versatile brand system with a bold color palette and custom typography that works across all platforms.'
       }
     },
     {
       id: 5,
-      title: 'Sports App UI Design',
-      category: 'Digital',
-      description: 'User interface design for a sports statistics and news application with a focus on real-time data visualization.',
-      imageUrl: '/images/sports/sport5.jpg',
+      title: 'Liberty Championship Graphics',
+      category: 'Event Graphics',
+      description: 'Championship celebration graphics for Liberty team featuring dynamic visual elements and trophy imagery.',
+      imageUrl: '/images/graphics/graphic5.png',
       details: {
-        client: 'Sports Tech Startup',
-        year: '2023',
-        services: ['UI/UX Design', 'Information Architecture', 'Visual Design', 'Prototyping'],
-        challenge: 'Design an intuitive, engaging interface for a data-heavy sports application that appeals to both casual and hardcore sports fans.',
-        solution: 'Created a clean, modern UI with customizable dashboards, innovative data visualizations, and a seamless user experience across devices.'
+        client: 'Liberty Sports Team',
+        year: '2024',
+        services: ['Event Graphics', 'Social Media Design', 'Championship Branding', 'Digital Assets'],
+        challenge: 'Create celebratory graphics that capture the excitement of a championship win for immediate social media deployment.',
+        solution: 'Designed a vibrant, energetic championship graphic with trophy imagery and team branding that generated significant social media engagement.'
       }
     },
     {
       id: 6,
-      title: 'Stadium Wayfinding System',
-      category: 'Environmental',
-      description: 'Comprehensive signage and wayfinding system for a renovated sports stadium to improve visitor experience.',
-      imageUrl: '/images/sports/sport8.jpg',
+      title: 'On-Air Broadcast Graphics',
+      category: 'Broadcast Design',
+      description: 'Professional broadcast graphics package for sports coverage including lower thirds, transitions, and information displays.',
+      imageUrl: '/images/graphics/graphic6.png',
       details: {
-        client: 'Metropolitan Stadium Authority',
-        year: '2022',
-        services: ['Wayfinding Strategy', 'Signage Design', 'Icon System', 'Implementation Guidelines'],
-        challenge: 'Develop an intuitive wayfinding system for a complex stadium environment that serves diverse audiences and enhances the fan experience.',
-        solution: 'Designed a clear, accessible signage system with a distinctive visual language, color coding, and universal icons that significantly reduced navigation confusion.'
+        client: 'Sports Broadcasting Network',
+        year: '2024',
+        services: ['Broadcast Design', 'Motion Graphics', 'Information Design', 'Brand Integration'],
+        challenge: 'Develop a cohesive broadcast graphics package that presents information clearly while maintaining visual appeal during live sports coverage.',
+        solution: 'Created a comprehensive graphics system with animated elements, clear typography, and flexible templates for various broadcast scenarios.'
+      }
+    },
+    {
+      id: 7,
+      title: 'PS5 Game Cover Design',
+      category: 'Product Design',
+      description: 'Custom sports game cover design for PlayStation 5 featuring dynamic action photography and bold typography.',
+      imageUrl: '/images/graphics/graphic7.png',
+      details: {
+        client: 'Video Game Publisher',
+        year: '2024',
+        services: ['Product Design', 'Packaging', 'Typography', 'Photo Editing'],
+        challenge: 'Design a compelling game cover that stands out on retail shelves while accurately representing the sports gaming experience.',
+        solution: 'Created an eye-catching cover design with dynamic athlete imagery, bold typography, and strategic use of color to attract the target audience.'
+      }
+    },
+    {
+      id: 8,
+      title: 'Sherman Shadowcats Team Graphics',
+      category: 'Team Branding',
+      description: 'Mascot-focused team graphics for Sherman Shadowcats featuring custom illustration and typography.',
+      imageUrl: '/images/graphics/graphic8.png',
+      details: {
+        client: 'Sherman High School Athletics',
+        year: '2023',
+        services: ['Mascot Design', 'Team Graphics', 'Illustration', 'Brand Application'],
+        challenge: 'Revitalize the Shadowcats brand with contemporary graphics while respecting the team\'s heritage and traditions.',
+        solution: 'Developed a modern interpretation of the Shadowcats mascot with dynamic poses and versatile applications for various team materials.'
+      }
+    },
+    {
+      id: 9,
+      title: 'Snider Player Feature - Landyn',
+      category: 'Player Graphics',
+      description: 'Featured player graphic for Snider team athlete Landyn with custom typography and visual effects.',
+      imageUrl: '/images/graphics/graphic9.png',
+      details: {
+        client: 'Snider Athletics Program',
+        year: '2024',
+        services: ['Player Features', 'Portrait Design', 'Digital Graphics', 'Social Media Content'],
+        challenge: 'Create a standout player feature graphic that highlights the athlete\'s personality while maintaining team visual identity.',
+        solution: 'Designed a bold player feature with custom lighting effects, dynamic typography, and strategic use of team colors and branding elements.'
+      }
+    },
+    {
+      id: 10,
+      title: 'Trent Perry Player Highlight',
+      category: 'Player Graphics',
+      description: 'Dynamic player highlight design for Trent Perry featuring action photography and custom graphic elements.',
+      imageUrl: '/images/graphics/graphic10.png',
+      details: {
+        client: 'College Basketball Program',
+        year: '2024',
+        services: ['Player Highlights', 'Action Photography', 'Digital Design', 'Brand Integration'],
+        challenge: 'Showcase a star player with a graphic that captures both athletic ability and personal brand within team guidelines.',
+        solution: 'Created a distinctive player highlight with custom typography, dynamic visual effects, and strategic composition that emphasizes the athlete\'s presence.'
       }
     }
   ];
