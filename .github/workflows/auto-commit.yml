@@ -1,0 +1,47 @@
+name: Auto Commit Changes
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  # Schedule the action to run periodically (every hour)
+  schedule:
+    - cron: '0 * * * *'
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            echo "::set-output name=changes_exist::false"
+          else
+            echo "Changes detected"
+            echo "::set-output name=changes_exist::true"
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes_exist == 'true'
+        run: |
+          git commit -m "Auto-commit: Update website content [skip ci]"
+          git push
