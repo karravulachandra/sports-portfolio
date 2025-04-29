@@ -1,3 +1,6 @@
+/* Add Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 :root {
   --primary-color: #0e3b7d; /* Deep blue - professional, sports-related */
   --secondary-color: #e63946; /* Accent red - energy, excitement */
@@ -79,8 +82,7 @@ a:hover {
   color: var(--secondary-color);
 }
 
-/* Add Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+/* Google Fonts already imported at the top */
 
 /* Utility classes */
 .text-center {
