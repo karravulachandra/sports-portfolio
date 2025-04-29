@@ -25,7 +25,7 @@ const Header = () => {
       <div className="header-overlay"></div>
       <div className="header-content">
         <div className={`header-profile-image ${isVisible ? 'visible' : ''}`}>
-          <img src="/images/profile/siddartha-field.jpg" alt="Siddartha Manubothu broadcasting from a sports field" />
+          <img src="/images/sports/sport1.jpg" alt="Siddartha Manubothu broadcasting from a sports field" />
         </div>
         <div className={`header-text-container ${isVisible ? 'visible' : ''}`}>
           <h1 className="main-title">

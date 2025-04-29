@@ -195,7 +195,7 @@ const BroadcastSection = () => {
             </div>
           </div>
           <div className="cta-image">
-            <img src="/images/profile/siddartha-field.jpg" alt="Siddartha Manubothu broadcasting" />
+            <img src="/images/sports/sport1.jpg" alt="Siddartha Manubothu broadcasting" />
           </div>
         </div>
       </div>
